@@ -1,6 +1,7 @@
 import React from "react";
 import FeaturedMix from "../components/FeaturedMix/FeaturedMix";
 import Header from "./Header";
+import 'tachyons'
 
 function App() {
   const style = {
