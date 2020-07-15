@@ -1,10 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const FeaturedMix = props => (
-    <div>
-        <p>Featured mix</p>
-        <h1>Mint Condition w/ Hotto - 27 bal</h1>
-        {/** Play list */}
+    <div className="w-50-l vh-100 flex items-center justify-center cover bg-center bg-featured pad-bottom fixed-l left-0 mix-overlay" >
+        <div className="w-100 tc pa3 relative z-2">
+            <p className='b biryani f6 white ttu'>Featured mix</p>
+            <h1 className='mix-title mt0 mb2 anton white ttu'>Mint Condition w/ Hotto - 27 bal</h1>
+        </div>
+        {/** Play button */}
     </div>
 )
 
