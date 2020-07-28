@@ -57,7 +57,7 @@ class App extends Component {
         <div>
           <div className="flex-l justify-end">
             <FeaturedMix />
-            {/* <div className="w-50-1 relative z-1">
+            <div className="w-50-1 relative z-1">
               <Header />
               <div>
                 <button onClick={this.togglePlay}>{this.state.playing ? 'Playing' : 'Pause' }</button>
@@ -67,7 +67,7 @@ class App extends Component {
                 <button onClick={() => this.playMix('/djsesion/reggaeton-2018-reggaeton-mix-2018-lo-mas-nuevo-ozuna-bad-bunny-maluma-j-balvin-becky-g/')}>Play Mix</button>
                 <button onClick={() => this.playMix('/djsesion/reggaeton-mix-diciembre-2017-lo-mas-nuevo-j-balvin-becky-g-bad-bunny-luis-fonsi-demi-lovato/')}>Play REGGETON minx</button>
               </div>
-            </div> */}
+            </div>
           <Route path="/" component={Home} />
           <Route path="/archive" component={Archive} />
           <Route path="/about" component={About} />

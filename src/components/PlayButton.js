@@ -2,7 +2,7 @@ import React from 'react';
 
 const PlayButton = props => (
   <div>
-      <button></button>
+      <button classNam="bu"></button>
   </div>
 );
 
