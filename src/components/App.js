@@ -18,8 +18,6 @@ class App extends Component {
       currentMix: ''
     }
   }
-  
-
 
   mountAudio = async ()=> {
     this.widget = Mixcloud.PlayerWidget(this.player);
@@ -35,26 +33,32 @@ class App extends Component {
       this.setState({
         playing: true
       })
-    })
+    });
+    
+console.log(this.state.playing)
+
 }
 
   componentDidMount(){
     this.mountAudio()
   }
+
   actions = {
     togglePlay: () => {
-      console.log('hi')
       this.widget.togglePlay();
     },
   
     playMix: mixName => {
       const {currentMix} = this.state;
+
       if(mixName === currentMix){
         return this.widget.togglePlay()
       }
+
       this.setState({
         currentMix: mixName
       })
+      
       this.widget.load(mixName, true)
     }
   }
@@ -77,7 +81,7 @@ class App extends Component {
           <iframe 
             className="player db fixed bottom-0"
             scrolling="no" 
-            ref={ player => this.player =player}
+            ref={ player => this.player = player}
             title='Playing Mix'
             frameBorder="0"
             width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2Fdjnobreakfast%2Fdj-no-breakfast-stoned-thursday-vol3%2F"></iframe>
