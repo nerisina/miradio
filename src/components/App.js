@@ -19,19 +19,7 @@ class App extends Component {
     }
   }
   
-  actions = {
-    togglePlay: () => {
-      console.log('hi')
-      this.widget.togglePlay();
-    },
-  
-    playMix: mixName => {
-      this.setState({
-        currentMix: mixName
-      })
-      this.widget.load(mixName, true)
-    }
-  }
+
 
   mountAudio = async ()=> {
     this.widget = Mixcloud.PlayerWidget(this.player);
@@ -52,6 +40,23 @@ class App extends Component {
 
   componentDidMount(){
     this.mountAudio()
+  }
+  actions = {
+    togglePlay: () => {
+      console.log('hi')
+      this.widget.togglePlay();
+    },
+  
+    playMix: mixName => {
+      const {currentMix} = this.state;
+      if(mixName === currentMix){
+        return this.widget.togglePlay()
+      }
+      this.setState({
+        currentMix: mixName
+      })
+      this.widget.load(mixName, true)
+    }
   }
   
   render() {
