@@ -8,5 +8,6 @@ const mixes = [
     'https://www.mixcloud.com/loungegrooves/nu-jazz-broken-funky-breaks-beats-radio-mix-archive-8/',
     'https://www.mixcloud.com/discover/latin-funk/',
     'https://www.mixcloud.com/djmakala/dj-makala-baile-latin-disco-funk-mix/'
-
 ]
+
+export default mixes;
