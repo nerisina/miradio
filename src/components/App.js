@@ -15,8 +15,19 @@ class App extends Component {
     super(props);
     this.state = {
       playing: false,
-      currentMix: ''
+      currentMix: '',
+      mix: null
     }
+  }
+
+  fetchMixes = async () => {
+    try{
+      const response = await fetch('https://api.mixcloud.com/culturesofsoul/exclusive-mix-from-alma-negra/');
+      const data = await response.json();
+      this.setState({
+        mix:data
+      })
+    }catch(error){ }
   }
 
   mountAudio = async ()=> {
@@ -34,13 +45,11 @@ class App extends Component {
         playing: true
       })
     });
-    
-console.log(this.state.playing)
-
 }
 
   componentDidMount(){
     this.mountAudio()
+    this.fetchMixes();
   }
 
   actions = {

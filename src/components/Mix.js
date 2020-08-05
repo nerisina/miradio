@@ -2,8 +2,10 @@ import React from 'react';
 import PlayButton from './PlayButton'
 import PlayMix from './PlayMix'
 
-const Mix = ({name, ...props}) => (
-  <div className='aspect-ratio aspect-ratio--3x4 pointer bg-black'>
+const Mix = ({name,pictures, ...props}) => (
+  <div 
+  className='aspect-ratio aspect-ratio--3x4 pointer bg-black bg-center'
+  style={{backgroundImage:`url(${pictures.extra_large})`}}>
     <PlayMix {...props}>
         <div className="ph3 pv4 aspect-ratio--object mix-overlay">
         <div className="flex items-center relative z-2">
