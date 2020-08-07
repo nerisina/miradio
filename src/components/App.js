@@ -4,8 +4,9 @@ import React, { Component } from "react";
 import FeaturedMix from "../components/FeaturedMix/FeaturedMix";
 import Header from "./Header";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import HomePage from './Home.js'
- 
+import HomePage from './Home.js';
+import mixesData from '../data/mixes'
+
 const About = () => <h2>About</h2>;
 const Archive = () => <h2>Archive</h2>;
 
@@ -16,18 +17,24 @@ class App extends Component {
     this.state = {
       playing: false,
       currentMix: '',
-      mix: null
+      mix: null,
+      mixIds: mixesData,
+      mixes: []
     }
   }
 
   fetchMixes = async () => {
-    try{
-      const response = await fetch('https://api.mixcloud.com/culturesofsoul/exclusive-mix-from-alma-negra/');
-      const data = await response.json();
-      this.setState({
-        mix:data
-      })
-    }catch(error){ }
+    const {mixIds} = this.state;
+    mixIds.map(async id => {
+      try{
+        const response = await fetch(`https://api.mixcloud.com/${id}`);
+        const data = await response.json();
+        this.setState((prevState, props) => ({  
+          mixes: [...prevState.mixes, data]
+        }))
+      }catch(error){ }
+    })
+    
   }
 
   mountAudio = async ()=> {
