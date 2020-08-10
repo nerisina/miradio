@@ -1,6 +1,7 @@
 import React from 'react';
 import Mix from './Mix'
 
+
 const Home = ({mixes, ...props}) => 
 <div className='flex flex-wrap justify-between mixes ph3 ph4-l'>
     {
@@ -10,6 +11,7 @@ const Home = ({mixes, ...props}) =>
             </div>
         ))
     }
+
 </div>
 ;
 export default Home;
