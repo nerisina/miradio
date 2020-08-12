@@ -6,9 +6,8 @@ import Header from "./Header";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import HomePage from './Home.js';
 import mixesData from '../data/mixes'
-
+import Archive from './Archive'
 const About = () => <h2>About</h2>;
-const Archive = () => <h2>Archive</h2>;
 
 class App extends Component {
 
@@ -95,8 +94,11 @@ class App extends Component {
               id={firstMix.key} />
             <div className="w-50">
               <Header />
-              <Route exact path="/" component={() => <HomePage {...this.state} {...this.actions} />} />
-              <Route path="/archive" component={Archive} />
+              <Route 
+              exact 
+              path="/" 
+              component={() => <HomePage {...this.state} {...this.actions} />} />
+              <Route path="/archive" component={() => <Archive {...this.state} {...this.actions} />} />
               <Route path="/about" component={About} />
               </div>
           </div>
