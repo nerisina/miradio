@@ -7,7 +7,7 @@ const Home = ({mixes, ...props}) =>
     {
         mixes.map( mix => (
             <div className='mix mb4'>
-                <Mix {...props} {...mix}/>
+                <Mix {...props} {...mix} id={mix.key} />
             </div>
         ))
     }

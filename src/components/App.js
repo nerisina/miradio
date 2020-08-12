@@ -81,11 +81,18 @@ class App extends Component {
   }
   
   render() {
+    // if the array is empty we assign it a default value 
+    // of an empty {} obj
+    const [firstMix = {}] = this.state.mixes;  
     return (
       <Router>
         <div>
           <div className="flex-l justify-end">
-            <FeaturedMix />
+            <FeaturedMix 
+              {...this.state} 
+              {...this.actions} 
+              {...firstMix} 
+              id={firstMix.key} />
             <div className="w-50">
               <Header />
               <Route exact path="/" component={() => <HomePage {...this.state} {...this.actions} />} />
