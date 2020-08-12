@@ -2,7 +2,7 @@ import React from "react";
 import PlayButton from './PlayButton';
 import PlayMix from './PlayMix'
 const Archive = ({mixes, ...props}) => (
-  <ul className="list p10 archive">
+  <ul className="list p10 archive mv0 pad-bottom">
     {mixes.map((mix) => (
       <li className="ph3 ph4-1">
           <PlayMix {...props} id="mix.key">
